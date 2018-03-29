@@ -1,6 +1,7 @@
 package cn.tsu.edu.service;
 
 import cn.tsu.edu.dataobject.ProductInfo;
+import cn.tsu.edu.dto.CartDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -25,7 +26,7 @@ public interface ProductService {
     ProductInfo save(ProductInfo productInfo);
 
     //加库存
-   /* void increaseStock(List<CartDTO> cartDTOList);
+    void increaseStock(List<CartDTO> cartDTOList);
 
     //减库存
     void decreaseStock(List<CartDTO> cartDTOList);
@@ -34,5 +35,5 @@ public interface ProductService {
     ProductInfo onSale(String productId);
 
     //下架
-    ProductInfo offSale(String productId);*/
+    ProductInfo offSale(String productId);
 }
