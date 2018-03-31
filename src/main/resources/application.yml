@@ -16,5 +16,12 @@ wechat:
   mpAppId: wx3336091da1d33f27
   mpAppSecret: b26c4d35e1cfb7d3b38ecbe10ea670de
 
+  mchId: 1483469312
+  mchKey: c976503d34ca432c601361f969fd8d85
+  keyPath: /var/weixin_cert/h5.p12
+  notifyUrl: http://swf.natapp1.cc/sell/pay/notify
+
+
+
 
 
