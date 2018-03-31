@@ -14,6 +14,7 @@ import cn.tsu.edu.repository.OrderDetailRepository;
 import cn.tsu.edu.repository.OrderMasterRepository;
 import cn.tsu.edu.service.OrderService;
 import cn.tsu.edu.service.ProductService;
+import cn.tsu.edu.service.WebSocket;
 import cn.tsu.edu.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -49,6 +50,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private  PayServiceImpl payService;
+
+    @Autowired
+    private WebSocket webSocket;
 
     @Override
     @Transactional
@@ -91,7 +95,7 @@ public class OrderServiceImpl implements OrderService {
         productService.decreaseStock(cartDTOList);
 
         //发送websocket消息
-       // webSocket.sendMessage(orderDTO.getOrderId());
+       webSocket.sendMessage(orderDTO.getOrderId());
 
         return orderDTO;
 
